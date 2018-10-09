@@ -69,7 +69,9 @@ public class SourceCacheSubscriber {
           this.callerMap.put(clazz, set);
         }
       }
-      source.usingClasses.clear();
+      // TODO fix ConcurrentModificationException:null
+      // commenting as a workaround
+      // source.usingClasses.clear();
     }
 
     final File sourceFile = source.getFile();
